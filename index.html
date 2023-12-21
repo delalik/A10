@@ -4,6 +4,15 @@
   <meta charset="UTF-8"/>
   <title>Cookie Jar</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+
+    #requestCookies {
+      display: block;
+    }
+    #getCookies {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <h1>Take a Cookie Out the Cookie Jar!</h1>
@@ -12,13 +21,18 @@
 <input type="text" id="val" placeholder="Number of Cookies">
 <br>
 
-<button onclick="setCookie()">Request Cookies</button>
-<button onclick="getCookie()">Get Cookie</button>
+<button id="requestCookies" onclick="requestCookies()">Request Cookies</button>
+
+
+<button id="getCookies" onclick="getCookie()">Get Cookie</button>
 
 <p id="cookies"></p>
 
 <script>
-  function setCookie() {
+  function requestCookies() {
+
+    document.getElementById('requestCookies').style.display = 'none';
+    document.getElementById('getCookies').style.display = 'block';
     document.cookie = `${document.getElementById('key').value}=${document.getElementById('val').value}`;
   }
 
@@ -27,5 +41,7 @@
   }
 </script>
 </body>
-<p>&copy; Delali Kumapley, December 2023 </p>
+<footer>
+  <p>&copy; Delali Kumapley, December 2023</p>
+</footer>
 </html>
