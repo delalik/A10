@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Cookie Jar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Take a Cookie Out the Cookie Jar!</h1>
+
+<input type="text" id="key" placeholder="Name">
+<input type="text" id="val" placeholder="Number of Cookies">
+<br>
+
+<button onclick="setCookie()">Request Cookies</button>
+<button onclick="getCookie()">Get Cookie</button>
+
+<p id="cookies"></p>
+
+<script>
+  function setCookie() {
+    document.cookie = `${document.getElementById('key').value}=${document.getElementById('val').value}`;
+  }
+
+  function getCookie() {
+    document.getElementById("cookies").innerHTML = document.cookie;
+  }
+</script>
+</body>
+<p>&copy; Delali Kumapley, December 2023 </p>
+</html>
